@@ -29,7 +29,7 @@ class DepartmentRepositoryTest {
     void setUp() {
 
         Department department = Department.builder()
-                .departmentName("Mechanical Engineering")
+                .departmentName("IT")
                 .departmentCode("Me- 011")
                 .departmentAddress("Pak").build();
 
@@ -39,7 +39,7 @@ class DepartmentRepositoryTest {
     public void whenFindBtId_thenReturnDepartment(){
 
         Department department = departmentRepository.findById(1L).get();
-        assertEquals(department.getDepartmentName(), "Mechanical Engineering");
+        assertEquals(department.getDepartmentName(), "IT");
     }
 
 }

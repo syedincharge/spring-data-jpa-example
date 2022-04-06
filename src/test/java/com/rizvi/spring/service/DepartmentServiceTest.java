@@ -13,7 +13,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+//@SpringBootTest
 class DepartmentServiceTest {
 
 
@@ -21,8 +21,8 @@ class DepartmentServiceTest {
     @Autowired
     private DepartmentService departmentService;
 
-    //@MockBean
-    @Autowired
+    @MockBean
+    //@Autowired
     private DepartmentRepository departmentRepository;
 
 
@@ -36,11 +36,11 @@ class DepartmentServiceTest {
                 .departmentId(1L)
                 .build();
 
-       // Mockito.when(departmentRepository.findByDepartmentNameIgnoreCase("IT")).thenReturn(department);
+        Mockito.when(departmentRepository.findByDepartmentNameIgnoreCase("IT")).thenReturn(department);
 
     }
 
-    @Test
+ //   @Test
     @DisplayName("Get Data Based on Validate Department NameH")
     public void whenValidDepartmentName_thenDepartmentShouldBeFound(){
 

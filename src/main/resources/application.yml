@@ -2,7 +2,7 @@
 
 spring:
   profiles:
-    active: qa
+    active: dev
 ---
 
 spring:
@@ -44,6 +44,13 @@ logging:
     console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
 welcome:
   message: Welcome to Developers Coding World  !!!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
 
 
 ---
