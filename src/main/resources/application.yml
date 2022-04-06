@@ -1,0 +1,101 @@
+
+
+spring:
+  profiles:
+    active: qa
+---
+
+spring:
+  jpa:
+    generate-ddl: 'true'
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        generate_statistics: 'false'
+        format_sql: 'true'
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: 'false'
+    database-platform: org.hibernate.dialect.H2Dialect
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    password: '1234'
+    username: root
+    url: jdbc:mysql://localhost:3306/departmentdb?useSSL=false
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+          nodeValue: trace
+        stat: debug
+        SQL: DEBUG
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+welcome:
+  message: Welcome to Developers Coding World  !!!
+
+
+---
+
+spring:
+  profiles: qa
+  datasource:
+    password: '1234'
+    username: root
+    url: jdbc:mysql://localhost:3306/departmentdbqa?useSSL=false
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+          nodeValue: trace
+        stat: debug
+        SQL: DEBUG
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+welcome:
+  message: Welcome to Developers Coding World  !!!
+
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    password: '1234'
+    username: root
+    url: jdbc:mysql://localhost:3306/departmentdbprod?useSSL=false
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+          nodeValue: trace
+        stat: debug
+        SQL: DEBUG
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+welcome:
+  message: Welcome to Developers Coding World  !!!
+
